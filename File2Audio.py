@@ -41,27 +41,27 @@ extension = os.path.splitext(file)[1]
 #filetype process
 if extension == '.docx':
     txt = docx2txt.process('{}'.format(file))
-    # Language in which you want to convert
+    #Language in which you want to convert
     language = ('{}'.format(taal))
-    # Passing the text and language to the engine
+    #Passing the text and language to the converter
     print('\n- converting file...')
-    myobj = gTTS(text=txt, lang=language, slow=False)
-    # Saving the converted audio in a mp3 file named
+    myfile = gTTS(text=txt, lang=language, slow=False)
+    #Saving the converted audio in a mp3 file
     print('\n- saving...')
-    myobj.save("FileReader.mp3")
+    myfile.save("FileReader.mp3")
     print('\n- Conversion compleet!')
     
 elif extension == '.txt':
     with open('{}'.format(file), 'r') as f:
         txt = f.read()
-        # Language in which you want to convert
+        #Language in which you want to convert
         language = ('{}'.format(taal))
-        # Passing the text and language to the engine
+        #Passing the text and language to the converter
         print('\n- converting file...')
-        myobj = gTTS(text=txt, lang=language, slow=False)
-        # Saving the converted audio in a mp3 file named
+        myfile = gTTS(text=txt, lang=language, slow=False)
+        #Saving the converted audio in a mp3 file
         print('\n- saving...')
-        myobj.save("FileReader.mp3")
+        myfile.save("FileReader.mp3")
         print('\n- Conversion compleet!')
 
 elif extension == '.pdf':
@@ -82,14 +82,14 @@ elif extension == '.pdf':
             pass
     #Converting multiline text to single line text
     txt = " ".join(textList)
-    # Language in which you want to convert
+    #Language in which you want to convert
     language = ('{}'.format(taal))
-    # Passing the text and language to the engine
+    #Passing the text and language to the converter
     print('\n- converting file...')
-    myobj = gTTS(text=txt, lang=language, slow=False)
-    # Saving the converted audio in a mp3 file named
+    myfile = gTTS(text=txt, lang=language, slow=False)
+    #Saving the converted audio in a mp3 file
     print('\n- saving...')
-    myobj.save("FileReader.mp3")
+    myfile.save("FileReader.mp3")
     print('\n- Conversion compleet!')
 
 time.sleep(2)
